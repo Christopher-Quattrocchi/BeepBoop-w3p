@@ -1,0 +1,26 @@
+h1 {
+  width:auto;
+  text-align: center;;
+}
+
+p {
+  width: auto;
+  text-align: center;
+}
+
+form {
+  width: auto;
+  text-align: center;
+}
+
+body {
+  background-color: aquamarine;
+}
+
+input {
+  background-color: rgb(213, 185, 240);
+}
+
+#output-div {
+  background-color: blueviolet;
+}

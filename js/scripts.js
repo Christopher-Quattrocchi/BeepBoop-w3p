@@ -12,8 +12,17 @@ function arrayTransform(inputNumber) {
     const outputArray = [];
     for (let i = 0; i <= inputNumber; i++) {
         outputArray.push(i);
-    
     }
-    let outputString = outputArray.join(", ");
+    let strArray = outputArray.join("");
+    let newArray = [];
+    for (let i= 0; i < (inputNumber + 1); i++) {
+        let string = strArray[i];
+        if (string.includes("3")) {
+            newArray.push("Won't you be my neighbor?");
+        } else {
+            newArray.push(string);
+        }
+    }
+    let outputString = newArray.join(", ");
     return outputString;
 }

@@ -17,6 +17,7 @@ Test: "It should return an array of numbers from 0 to input number"
 Code: beepboop(5);
 Expected Output: 0 1 2 3 4 5
 
+PASSED
 Test: "It should replace numbers that contain a 3 with "Won't you be my neighbor"
 Code: beepboop(3);
 Expected Output: 0 1 2 Won't you be my neighbor?

@@ -23,19 +23,18 @@ function beepBoop(inputNumber) {
         outputArray.push(i);
     }
     let strArray = outputArray.map(String);
-    let newArray = [];
-    for (let i= 0; i < (inputNumber + 1); i++) {
-        // let string = strArray[i];
+    let finalArray = [];
+    for (let i= 0; i <= (inputNumber); i++) {
         if (strArray[i].includes("3")) {
-            newArray.push("Won't you be my neighbor?");
+            finalArray.push("Won't you be my neighbor?");
         } else if (strArray[i].includes("2")) {
-            newArray.push("Boop!")
+            finalArray.push("Boop!")
         } else if (strArray[i].includes("1")) {
-            newArray.push("Beep!")
+            finalArray.push("Beep!")
         } else {
-            newArray.push(i);
+            finalArray.push(i);
         }
     }
-    let outputString = newArray.join(" ");
+    let outputString = finalArray.join(" ");
     return outputString;
 }

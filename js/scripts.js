@@ -46,6 +46,8 @@ function beepBoop(inputNumber, inputName) {
             finalArray.push("Boop!")
         } else if (strArray[i].includes("1")) {
             finalArray.push("Beep!")
+        } else if (strArray[i].includes("5")) {
+            finalArray.push("FIVE DETECTED")
         } else {
             finalArray.push(i);
         }

@@ -5,6 +5,11 @@ Numbers containing 3, all digits replaced by "Won't you be my neighbor?"
 Numbers containing 2, all digits replaced by "Boop!"
 Numbers containing 1, all digits should be replaced by "Beep!"
 
+Add second input box to take a name, and add that to "Won't you be my neighbor, name?
+Add second form to count down from input number
+Maybe add some other modifications for numbers
+Style it a bit
+
 
 Solve with: Loop, array, branching. User should be able to enter another number after the first, and see the new results over and over.
 

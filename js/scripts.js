@@ -15,16 +15,15 @@ function handleSubmission(event) {
 
 }
 
-
 //Business Logic
 function beepBoop(inputNumber) {
     const outputArray = [];
     for (let i = 0; i <= inputNumber; i++) {
-        outputArray.push(i);
+        outputArray.push(i);//Build an array, starting with zero, up to input number
     }
-    let strArray = outputArray.map(String);
-    let finalArray = [];
-    for (let i= 0; i <= (inputNumber); i++) {
+    const strArray = outputArray.map(String);//turn outputArray into a string array so that .includes can be used on it
+    const finalArray = [];
+    for (let i= 0; i <= inputNumber; i++) {
         if (strArray[i].includes("3")) {
             finalArray.push("Won't you be my neighbor?");
         } else if (strArray[i].includes("2")) {
@@ -34,7 +33,6 @@ function beepBoop(inputNumber) {
         } else {
             finalArray.push(i);
         }
-    }
-    let outputString = finalArray.join(" ");
-    return outputString;
+    }    
+    return finalArray.join(" ");//turn array into a string, separated by space
 }

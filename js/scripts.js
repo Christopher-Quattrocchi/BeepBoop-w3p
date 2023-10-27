@@ -19,10 +19,12 @@ function arrayTransform(inputNumber) {
         let string = strArray[i];
         if (string.includes("3")) {
             newArray.push("Won't you be my neighbor?");
+        } else if (string.includes("2")) {
+            newArray.push("Boop!")
         } else {
             newArray.push(string);
         }
     }
-    let outputString = newArray.join(", ");
+    let outputString = newArray.join(" ");
     return outputString;
 }

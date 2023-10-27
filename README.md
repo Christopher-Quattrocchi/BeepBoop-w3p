@@ -1,3 +1,47 @@
+# _Portfolio Project - End of Week Three_
+
+#### _Practice Git operations, HTML, JS branching, loops, arrays Oct 27th 2023_
+
+#### By _**Chris Quattrocchi**_
+
+## Description
+
+_End of week three recap. JavaScript practice with loops, arrays, and branching. Takes a number and a name, then counts down from that number to zero. Replaces numbers containing 3 with "Won't you be my Neighbor, name?", numbers containing 2 with "Boop!", numbers containing 1 with "Beep", and numbers containing 5 with "FIVE DETECTED", in that order. The alternate function does the same thing, but in the reverse order. Also, the alternate function ignores numbers containing 5._
+
+
+
+## Setup/Installation Requirements
+
+* _clone repository or use the download link_
+* _extract zip file if required_
+* _open index.html_
+
+
+## Known Bugs
+
+_Currently not known_
+
+## Support and contact details
+
+_chrisquattrocchi@gmail.com, phone number is 503-841-0072_
+
+## Technologies Used
+
+_HTML, CSS, Git and JS were used in the creation of this page_
+
+## Link to gh-pages
+
+
+[gh-pages link]([
+](https://christopher-quattrocchi.github.io/language-suggestion/)
+https://christopher-quattrocchi.github.io/language-suggestion/)
+
+### License
+
+Copyright (c) 2023-3077 **_{Chris Quattrocchi}_**
+
+Instructions/testing
+
 Description: Take a number as input, and returns a list of values from 0 to the input number. 
 Substitutions should be made (in this order):
 

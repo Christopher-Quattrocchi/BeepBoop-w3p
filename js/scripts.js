@@ -21,6 +21,8 @@ function arrayTransform(inputNumber) {
             newArray.push("Won't you be my neighbor?");
         } else if (string.includes("2")) {
             newArray.push("Boop!")
+        } else if (string.includes("1")) {
+            newArray.push("Beep!")
         } else {
             newArray.push(string);
         }

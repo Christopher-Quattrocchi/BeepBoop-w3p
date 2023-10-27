@@ -22,10 +22,12 @@ Test: "It should replace numbers that contain a 3 with "Won't you be my neighbor
 Code: beepboop(3);
 Expected Output: 0 1 2 Won't you be my neighbor?
 
+PASSED
 Test: "It should replace numbers containing 2 with "Boop!"
 Code: beepboop(2);
 Expected Output: 0 1 Boop!
 
+PASSED
 Test: "It should replace numbers containing 1 with "Beep!"
 Code: beepboop(3);
 Expected Output: 0 Beep! Boop! Won't you be my neighbor!

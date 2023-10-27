@@ -1,30 +1,26 @@
 function beepBoop(inputNumber) {
 
-    const outputArray = arrayTransform(inputNumber);
-    // const numString = inputNumber.toString();
-    // const strArray = numString.split("");
-    // const numArray = strArray.map(Number);
-    // const outputString = arrayTransform(strArray);
-    console.log(outputArray);
+    const outputString = textTransform(inputNumber);
+    console.log(outputString);
 }
 
-function arrayTransform(inputNumber) {
+function textTransform(inputNumber) {
     const outputArray = [];
     for (let i = 0; i <= inputNumber; i++) {
         outputArray.push(i);
     }
-    let strArray = outputArray.join("");
+    let strArray = outputArray.map(String);
     let newArray = [];
     for (let i= 0; i < (inputNumber + 1); i++) {
-        let string = strArray[i];
-        if (string.includes("3")) {
+        // let string = strArray[i];
+        if (strArray[i].includes("3")) {
             newArray.push("Won't you be my neighbor?");
-        } else if (string.includes("2")) {
+        } else if (strArray[i].includes("2")) {
             newArray.push("Boop!")
-        } else if (string.includes("1")) {
+        } else if (strArray[i].includes("1")) {
             newArray.push("Beep!")
         } else {
-            newArray.push(string);
+            newArray.push(i);
         }
     }
     let outputString = newArray.join(" ");

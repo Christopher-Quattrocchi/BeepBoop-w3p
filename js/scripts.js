@@ -1,10 +1,23 @@
-function beepBoop(inputNumber) {
+//UI Logic
+window.addEventListener("load", function(){
+    document.querySelector("form#input-form").addEventListener("submit", handleSubmission);
+})
 
-    const outputString = textTransform(inputNumber);
-    console.log(outputString);
+function handleSubmission(event) {
+    event.preventDefault();
+    const inputNumber = parseInt(document.getElementById("input-text").value);
+    const outputString = beepBoop(inputNumber);
+    pEle = document.createElement("p");
+    divEle = document.querySelector("div#output-div");
+    document.querySelector("div#output-div").innerHTML = "";
+    pEle.append(outputString);
+    divEle.append(pEle);
+
 }
 
-function textTransform(inputNumber) {
+
+//Business Logic
+function beepBoop(inputNumber) {
     const outputArray = [];
     for (let i = 0; i <= inputNumber; i++) {
         outputArray.push(i);

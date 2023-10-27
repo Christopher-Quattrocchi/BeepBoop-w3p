@@ -32,14 +32,7 @@ Test: "It should replace numbers containing 1 with "Beep!"
 Code: beepboop(3);
 Expected Output: 0 Beep! Boop! Won't you be my neighbor!
 
+PASSED
 Test: "It should clear previous results on submit"
-Code: 
-Expected Output:
-
-Test:
-Code:
-Expected Output:
-
-Test:
-Code:
-Expected Output:
+Code: --
+Expected Output:--

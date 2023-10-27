@@ -10,7 +10,13 @@ function handleSubmission(event) {//handles the UI for the first form
     const inputNumber = parseInt(document.getElementById("input-text").value);
     const inputName = document.getElementById("input-name").value;
     const outputString = beepBoop(inputNumber, inputName);
-    outputFunction(outputString);
+    const validation = validationCheck(inputNumber, inputName);
+    if (validation === false) {
+        outputFunction(outputString);
+    } else {
+        outputFunction(validation);
+    }
+    
 
 }
 
@@ -29,6 +35,17 @@ function outputFunction(output) {//this function reduces redundancy
     document.querySelector("div#output-div").innerHTML = "";
     pEle.append(output);
     divEle.append(pEle);
+}
+
+function validationCheck(inputNumber, inputName) {//Checks for valid number that won't blow up the computer and checks for name because I don't feel like changing the lower function to deal with no name
+    if (inputNumber < 0 || inputNumber > 1000) {
+        return "Enter a non-negative number under 1000";
+    } else if ((typeof inputName !== "string") || inputName.length === 0) {
+        return "Enter a valid name";
+    }
+    else {
+        return false;
+    }
 }
 
 

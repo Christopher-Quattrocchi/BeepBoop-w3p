@@ -6,7 +6,8 @@ window.addEventListener("load", function(){
 function handleSubmission(event) {
     event.preventDefault();
     const inputNumber = parseInt(document.getElementById("input-text").value);
-    const outputString = beepBoop(inputNumber);
+    const inputName = document.getElementById("input-name").value;
+    const outputString = beepBoop(inputNumber, inputName);
     pEle = document.createElement("p");
     divEle = document.querySelector("div#output-div");
     document.querySelector("div#output-div").innerHTML = "";
@@ -16,7 +17,7 @@ function handleSubmission(event) {
 }
 
 //Business Logic
-function beepBoop(inputNumber) {
+function beepBoop(inputNumber, inputName) {
     const outputArray = [];
     for (let i = 0; i <= inputNumber; i++) {
         outputArray.push(i);//Build an array, starting with zero, up to input number
@@ -25,7 +26,7 @@ function beepBoop(inputNumber) {
     const finalArray = [];
     for (let i= 0; i <= inputNumber; i++) {
         if (strArray[i].includes("3")) {
-            finalArray.push("Won't you be my neighbor?");
+            finalArray.push("Won't you be my neighbor, " + inputName + "?");
         } else if (strArray[i].includes("2")) {
             finalArray.push("Boop!")
         } else if (strArray[i].includes("1")) {

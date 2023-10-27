@@ -41,3 +41,8 @@ PASSED
 Test: "It should clear previous results on submit"
 Code: --
 Expected Output:--
+
+PASSED
+Test: "It should add name to 'Won't you be my neighbor?'"
+Code: beepboop(5, name)
+Expected Output: ..."Won't you be my neighbor, name?"...

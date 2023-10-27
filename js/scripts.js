@@ -11,7 +11,7 @@ function handleSubmission(event) {//handles the UI for the first form
     const inputName = document.getElementById("input-name").value;
     const outputString = beepBoop(inputNumber, inputName);
     const validation = validationCheck(inputNumber, inputName);
-    if (validation === false) {
+    if (validation === true) {
         outputFunction(outputString);
     } else {
         outputFunction(validation);
@@ -38,13 +38,13 @@ function outputFunction(output) {//this function reduces redundancy
 }
 
 function validationCheck(inputNumber, inputName) {//Checks for valid number that won't blow up the computer and checks for name because I don't feel like changing the lower function to deal with no name
-    if (inputNumber < 0 || inputNumber > 1000) {
+    if (inputNumber < 0 || inputNumber > 1000 || isNaN(inputNumber)) {
         return "Enter a non-negative number under 1000";
-    } else if ((typeof inputName !== "string") || inputName.length === 0) {
+    } else if ((typeof inputName !== "string") || inputName.trim().length === 0) {
         return "Enter a valid name";
     }
     else {
-        return false;
+        return true;
     }
 }
 

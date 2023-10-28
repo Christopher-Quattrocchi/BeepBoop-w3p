@@ -43,9 +43,9 @@ function outputFunction(output) {//this function reduces redundancy
 }
 
 function validationCheck(inputNumber, inputName) {//Checks for valid number that won't blow up the computer and checks for name because I don't feel like changing the lower function to deal with no name
-    if (inputNumber < 0 || inputNumber > 1000 || isNaN(inputNumber)) {
+    if (inputNumber < 0 || inputNumber > 1000 || !/^\d+$/.test(inputNumber)) {
         return "Enter a non-negative number under 1000";
-    } else if ((typeof inputName !== "string") || inputName.trim().length === 0) {
+    } else if (!/^[a-zA-Z\s]+$/.test(inputName) || inputName.trim().length === 0) {
         return "Enter a valid name";
     }
     else {

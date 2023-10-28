@@ -25,7 +25,12 @@ function bizarroOutput (event) {//confusingly named funtion that outputs the alt
     const inputNumber2 = parseInt(document.getElementById("input-text2").value);
     const inputName2 = document.getElementById("input-name2").value;
     const outputString2 = boopBeep(inputNumber2, inputName2);
-    outputFunction(outputString2);
+    const validation = validationCheck(inputNumber2, inputName2);
+    if (validation === true) {
+        outputFunction(outputString2);
+    } else {
+        outputFunction(validation);
+    }
     
 }
 

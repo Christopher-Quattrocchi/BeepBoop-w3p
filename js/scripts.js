@@ -9,23 +9,23 @@ function handleSubmission(event) {//handles the UI
   const inputNumber = parseInt(document.getElementById("input-text").value);
   const inputName = document.getElementById("input-name").value;
   const isThereName = nameChecker(inputName);
-  const outputArray = beepBoop(inputNumber, inputName, isThereName);
+  let outputArray = beepBoop(inputNumber, inputName, isThereName);
   const numberCheck = numberChecker(inputNumber);
   const reverseArray = outputArray.reverse();
   if (upOrDown === "up") {
-    if (numberCheck === true) {
-      outputFunction(outputArray);
-    } else if (numberCheck !== true) {
-      outputFunction(numberCheck);
-    }
-  } else {
-    if (numberCheck === true) {
-      outputFunction(reverseArray);
-    } else if (numberCheck !== true) {
-      outputFunction(numberCheck);
-    }
+    outputArray = outputArray.reverse();
+  }
+  utilityForSub(numberCheck, outputArray);
+}
+
+function utilityForSub(numberCheck, finalArray) {
+  if (numberCheck === true) {
+    outputFunction(finalArray);
+  } else if (numberCheck !== true) {
+    outputFunction(numberCheck);
   }
 }
+
 
 function outputFunction(output) {//this function reduces redundancy
   const pEle = document.createElement("p");

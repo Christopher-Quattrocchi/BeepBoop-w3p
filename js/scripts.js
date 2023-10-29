@@ -11,8 +11,7 @@ function handleSubmission(event) {//handles the UI
   const isThereName = nameChecker(inputName);
   let outputArray = beepBoop(inputNumber, inputName, isThereName);
   const numberCheck = numberChecker(inputNumber);
-  const reverseArray = outputArray.reverse();
-  if (upOrDown === "up") {
+  if (upOrDown === "down") {
     outputArray = outputArray.reverse();
   }
   utilityForSub(numberCheck, outputArray);

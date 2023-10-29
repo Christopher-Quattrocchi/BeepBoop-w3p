@@ -6,24 +6,33 @@ window.addEventListener("load", function () {
 function handleSubmission(event) {//handles the UI
   event.preventDefault();
   const upOrDown = document.querySelector("select#updown").value;
+  const nameYesNo = document.querySelector("select#namechoice").value;
+  const isThereName = nameChecker(inputName);
   const inputNumber = parseInt(document.getElementById("input-text").value);
   const inputName = document.getElementById("input-name").value;
   if (upOrDown === "up") {
-    const outputString = beepBoop(inputNumber, inputName);
-    const validation = validationCheck(inputNumber, inputName);
-    if (validation === true) {
-      outputFunction(outputString);
-    } else {
-      outputFunction(validation);
+    
+    const outputArray = beepBoop(inputNumber, inputName, nameYesNo);
+    const numberCheck = numberChecker(inputNumber);
+    const nameCheck = nameChecker(inputName, nameYesNo);
+    if (numberCheck === true && nameCheck === true) {
+      outputFunction(outputArray);
+    } else if (numberCheck !== true) {
+      outputFunction(numberCheck);
+    } else if (nameCheck !== true) {
+      outputFunction(nameCheck);
     }
   } else {
-    const outputString = beepBoop(inputNumber, inputName);
-    const reverseString = outputString.reverse();
-    const validation = validationCheck(inputNumber, inputName);
-    if (validation === true) {
-      outputFunction(reverseString);
-    } else {
-      outputFunction(validation);
+    const outputArray = beepBoop(inputNumber, inputName, nameYesNo);
+    const reverseArray = outputArray.reverse();
+    const numberCheck = numberChecker(inputNumber);
+    const nameCheck = nameChecker(inputName, nameYesNo);
+    if (numberCheck === true && nameCheck === true) {
+      outputFunction(reverseArray);
+    } else if (numberCheck !== true) {
+      outputFunction(numberCheck);
+    } else if (nameCheck !== true) {
+      outputFunction(nameCheck);
     }
   }
 
@@ -48,23 +57,32 @@ function outputFunction(output) {//this function reduces redundancy
   }
 }
 
-function validationCheck(inputNumber, inputName) {//Checks for valid number that won't blow up the computer and checks for name
-  if (inputNumber < 0 || inputNumber > 1000 || !/^\d+$/.test(inputNumber)) {
-    return "Enter a non-negative number under 1000";
-  } else if (!/^[a-zA-Z\s]+$/.test(inputName) || inputName.trim().length === 0) {
-    return "Enter a valid name";
-  }
-  else {
+function numberChecker(inputNumber) {
+  if (inputNumber < 0 || inputNumber > 3000 || !/^\d+$/.test(inputNumber)) {
+    return "Enter a non-negative number under 3000";
+  } else {
     return true;
   }
 }
 
+function nameChecker(inputName) {
+ if (!/^[a-zA-Z\s]+$/.test(inputName) || inputName.trim().length === 0) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+
+
 //Business Logic
-function beepBoop(inputNumber, inputName) {
+function beepBoop(inputNumber, inputName, nameYesNo) {
   const outputArray = [];
   for (let i = 0; i <= inputNumber; i++) {
-    if (i.toString().includes("3")) {
+    if (i.toString().includes("3") && nameYesNo === "yes") {
       outputArray.push("Won't you be my neighbor," + inputName + "?");
+    } else if (i.toString().includes("3")) {
+      outputArray.push("Won't you be my neighbor?");
     } else if (i.toString().includes("2")) {
       outputArray.push("Boop!");
     } else if (i.toString().includes("1")) {

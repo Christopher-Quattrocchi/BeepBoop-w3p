@@ -98,8 +98,12 @@ Expected Output: 5 4 Wont you..
 
 getting back to testing:
 
-TODO: Make beepboop and boopbeep work with one loop
+TODO: Make beepboop and boopbeep work with one loop SUCCESS
 
 Test: use pseudo classes to change the styling for the input based on whether the input is valid or not
 Code: validationCheck(-1, name)
 Expected Output: input turns red
+
+Test: make a drop down where the user can decide whether they want to use a name or not. If no, disable the name validation check and output "Won't you be my neighbor?" without the name
+Code: 
+Expected Output

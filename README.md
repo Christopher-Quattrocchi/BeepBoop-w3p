@@ -95,3 +95,11 @@ PASSED
 Test: "Same as the beepBoop, but backwards"
 Code: boopbeep(5)
 Expected Output: 5 4 Wont you..
+
+getting back to testing:
+
+TODO: Make beepboop and boopbeep work with one loop
+
+Test: use pseudo classes to change the styling for the input based on whether the input is valid or not
+Code: validationCheck(-1, name)
+Expected Output: input turns red

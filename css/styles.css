@@ -24,3 +24,7 @@ input {
 #output-div {
   background-color: rgb(226, 217, 235);
 }
+
+#output-div ul {
+  scroll-behavior: smooth;
+}

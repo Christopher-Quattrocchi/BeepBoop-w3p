@@ -32,19 +32,21 @@ function outputFunction(output) {//this function reduces redundancy
   const divEle = document.querySelector("div#output-div");
   document.querySelector("div#output-div").innerHTML = "";
   divEle.append(ulEle);
-  for (let i = 0; i < output.length; i++) {
-    if (!Array.isArray(output)) {
-      pEle.append(output);
-      divEle.append(pEle);
-      break;
-    } else {
-      const liEle = document.createElement("li");
-      liEle.append(output[i]);
-      ulEle.append(liEle);
+  function appendItem(i) {
+    if (i < output.length) {
+      if (!Array.isArray(output)) {
+        pEle.append(output);
+        divEle.append(pEle);
+      } else {
+        const liEle = document.createElement("li");
+        liEle.append(output[i]);
+        ulEle.append(liEle);
+        setTimeout(() => appendItem(i + 1), 15);
+      }
     }
   }
+  appendItem(0);
 }
-
 function numberChecker(inputNumber) {//Verifies number input
   if (inputNumber < 0 || inputNumber > 3000 || !/^\d+$/.test(inputNumber)) {
     return "Enter a non-negative number under 3000";
